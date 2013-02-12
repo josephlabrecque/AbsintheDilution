@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Absinthe Dilution Faerie</title>
+		<link rel="stylesheet" href="jquery/themes/Absinthe.min.css" />
+		<link rel="stylesheet" href="jquery/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="jquery/jquery-1.8.3.min.js"></script>
+        <script>
+		$(document).bind("mobileinit", function(){
+			defaultPageTransition: "fade";
+		});
+		</script>
+		<script src="jquery/jquery.mobile-1.2.0.min.js"></script>
+        <style>
+			@font-face {
+				font-family: "Patrick Hand";
+				src: url(fonts/PatrickHand-Regular.ttf) format("truetype");
+			}
+			@font-face {
+				font-family: "Jacques Francois Shadow";
+				src: url(fonts/JacquesFrancoisShadow-Regular.ttf) format("truetype");
+			}
+			.ui-mobile .ui-page .ui-content {
+				background : none;
+				font-family: "Patrick Hand";
+				font-size: 1.4em;
+			}
+			.ui-mobile .ui-page {
+				background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
+				background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -ms-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: linear-gradient(#FFFFa9,#d6d88a);
+			}
+			.ui-title {
+				font-family: "Jacques Francois Shadow";
+				font-size:1.8em !important;
+				margin:5% !important;
+			}
+			.containing-element .ui-slider-switch { width: 9em }
+		</style>
+	</head>
+	<body data-theme="a">
+    
+    
+		<div data-role="page" id="start" data-theme="a">
+			<div data-role="header" data-id="appHeader" data-position="fixed">
+				<h1>Absinthe Dilution Faerie</h1>
+			</div>
+            
+			<div data-role="content" data-theme="a">
+				<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
+				
+			</div>
+            <div data-role="footer" class="ui-bar" data-id="appFooter" data-position="fixed">
+            	<div data-role="navbar">
+                    <ul>
+                        <li><a href="#start">Home</a></li>
+                        <li><a href="#dilute">Dilute</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+        
+        
+		<div data-role="page" id="dilute" data-theme="a">
+			<div data-role="header" data-id="appHeader" data-position="fixed">
+				<h1>Dilution Calculator</h1>
+			</div>
+			<div data-role="content" data-theme="a">
+                <div class="containing-element">
+                    <label for="flip-min">Flip switch:</label>
+                    <select name="flip-min" id="flip-min" data-role="slider">
+                        <option value="off">US</option>
+                        <option value="on">Metric</option>
+                    </select>
+                </div>
+				<p>X ounces</p>
+                <label for="basic">Ounce(s) of Absinthe:</label>
+                <input type="text" name="name" id="basic" value="1"  />
+                <label for="basic">Absinthe % ABV</label>
+                <input type="text" name="name" id="basic" value="68"  />
+                <label for="basic">Prepared % ABV</label>
+                <input type="text" name="name" id="basic" value="12"  />
+                <h2>add X ounces water</h2>
+                <input type="submit" value="Calculate" />
+
+			</div>
+            <div data-role="footer" class="ui-bar" data-id="appFooter" data-position="fixed">
+            	<div data-role="navbar">
+                    <ul>
+                        <li><a href="#start">Home</a></li>
+                        <li><a href="#dilute">Dilute</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+        
+        
+		<div data-role="page" id="brands" data-theme="a">
+			<div data-role="header" data-id="appHeader" data-position="inline">
+				<h1>Absinthe Brands</h1>
+			</div>
+			<div data-role="content" data-theme="a">
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li><a href="#">Acura</a></li>
+                    <li><a href="#">Audi</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Cadillac</a></li>
+                    <li><a href="#">Ferrari</a></li>
+                </ul>
+			</div>
+            <div data-role="footer" class="ui-bar" data-id="appFooter" data-position="fixed">
+            	<div data-role="navbar">
+                    <ul>
+                        <li><a href="#start">Home</a></li>
+                        <li><a href="#dilute">Dilute</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+        
+        
+		<div data-role="page" id="about" data-theme="a">
+			<div data-role="header" data-id="appHeader" data-position="fixed">
+				<h1>About this App</h1>
+			</div>
+			<div data-role="content" data-theme="a">
+            	<h2>About</h2>
+				<p>well look</p>
+			</div>
+            <div data-role="footer" class="ui-bar" data-id="appFooter" data-position="fixed">
+            	<div data-role="navbar">
+                    <ul>
+                        <li><a href="#start">Home</a></li>
+                        <li><a href="#dilute">Dilute</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+		</div>
+        
+        
+	</body>
+</html>
