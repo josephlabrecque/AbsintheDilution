@@ -6,6 +6,7 @@
 		<title>Absinthe Dilution Faerie</title>
 		<link rel="stylesheet" href="jquery/jquery.mobile-1.2.0.min.css" />
 		<link rel="stylesheet" href="jquery/themes/Absinthe.min.css" />
+        <script src="cordova-2.4.0.js"></script>
 		<script src="jquery/jquery-1.8.3.min.js"></script>
         <script>
 		$(document).bind("mobileinit", function(){
@@ -21,6 +22,15 @@
 			@font-face {
 				font-family: "Jacques Francois Shadow";
 				src: url(fonts/JacquesFrancoisShadow-Regular.ttf) format("truetype");
+			}
+			a {
+				color:#030 !important;
+			}
+			body {
+				text-align:center;
+			}
+			img {
+				image-rendering: auto;
 			}
 			.ui-mobile .ui-page .ui-content {
 				background : none;
@@ -41,23 +51,85 @@
 				font-size:1.4em !important;
 				margin:5% !important;
 			}
+			label {
+				text-align:left;
+				position:relative;
+				top:1em;
+			}
 			.containing-element .ui-slider-switch { width: 9em }
 		</style>
+        
         <script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			
+			var db;
+			
+			function onDeviceReady() {
+				//db = getDatabase();
+				//db.transaction(populateDB, errorCB, successCB);
+			}
+			/*
+			function getDatabase() {
+				return window.openDatabase("AbsintheDB", "1.0", "Absinthe Database", 200000);
+			}
+			
+			function populateDB(tx) {
+				 tx.executeSql('DROP TABLE IF EXISTS ABSINTHE_LIST');
+				 tx.executeSql('CREATE TABLE IF NOT EXISTS ABSINTHE_LIST (id unique, brand, abv)');
+				 tx.executeSql('INSERT INTO ABSINTHE_LIST (id, brand, abv) VALUES (1, "Leopold Brothers Absinthe Verte", 66)');
+				 tx.executeSql('INSERT INTO ABSINTHE_LIST (id, brand, abv) VALUES (1, "Delaware Phoenix Walton Waters Absinthe Superieure"), 68');
+				 tx.executeSql('INSERT INTO ABSINTHE_LIST (id, brand, abv) VALUES (1, "Pacifique Absinthe Verte Superieure"), 62');
+				 tx.executeSql('INSERT INTO ABSINTHE_LIST (id, brand, abv) VALUES (1, "Vieux Carré Absinthe"), 60');
+				 tx.executeSql('INSERT INTO ABSINTHE_LIST (id, brand, abv) VALUES (1, "Trinity Absinthe Superieure"), 63');
+				 tx.executeSql('INSERT INTO ABSINTHE_LIST (id, brand, abv) VALUES (2, "Lucid Absinthe Superieure"), 62');
+			}
+			
+			function errorCB(tx, err) {
+				alert("Error processing SQL: "+err);
+			}
+			
+			function successCB() {
+				alert("success!");
+			}
+			
+			*/
+			
+			/*
+			
+			function insertItem() {
+				var insertValue = document.getElementById('list_action').value;
+				db.transaction(function(tx) {
+					tx.executeSql('INSERT INTO ABSINTHE_LIST(list_action) VALUES ("' + insertValue + '")');
+				}, databaseError, getItems);
+				document.getElementById('list_action').value = '';
+			}
+			
+			function databaseError(error) {
+				messageElement.html("SQL Error: " + error.code);
+			}
+			
+			function getItems() {
+				db.transaction(function(tx) {
+					tx.executeSql('SELECT * FROM ABSINTHE_LIST', [], querySuccess, databaseError);
+				}, databaseError);
+			}
+			
+			function querySuccess(tx, results) {
+				var len = results.rows.length;
+				var output = '';
+				for (var i=0; i<len; i++){
+					output = output +
+					'<li id="' + results.rows.item(i).id + '">' + results.rows.item(i).list_action + '</li>';
+				}
+				listElement.html('<ul>' + output + '</ul>');
+			}
+			*/
+			
 			function calculate() {
-				calculation.innerHTML = measure.value *((begin.value / finish.value)-1);
+				var temper = measure.value * ((begin.value / finish.value)-1);
+				calculation.innerHTML = "Temper this absinthe with " + temper.toPrecision(3) + " ounces of water.";
 			}
 		</script>
-        <!--
-        TODO:
-        home page content
-        about content
-        complete brand page and DB
-        dilution calculator
-        inputs summon numbers only
-        1 US fluid ounce = 29.574 ml
-        
-        -->
         
 	</head>
 	<body>
@@ -69,8 +141,10 @@
 			</div>
             
 			<div data-role="content">
-				<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
-				
+				<img src="images/CafeAnim8_Absinthe.png" width="80%" style="padding-left:18%;padding-top:30px;" />
+                <p>"Absinthe Dilution Faerie" is a small application which calculates how much water one should temper a dose of absinthe with in accordance with the ABV percentage as <a href="http://wormwoodsociety.org/index.php/general-information-education-214/601-absinthe-dilution-matrix">laid out</a> by Michael Meyers of The Wormwood Society.</p>
+                <p>While this application strives to provide solid information - there is always personal preference to account for.</p>
+                <p>À votre santé!</p>
 			</div>
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
@@ -90,6 +164,7 @@
 				<h1>Dilution Calculator</h1>
 			</div>
 			<div data-role="content">
+            	<img src="images/matrix.jpg" width="90%" style="padding-left:5%;padding-right:5%;" />
                 <!--<div data-role="fieldcontain">
                     <div class="containing-element">
                         <label for="units">Units:</label>
@@ -99,21 +174,24 @@
                         </select>
                     </div>
                 </div>-->
-                <div data-role="fieldcontain">
-                    <label for="measure">Ounce(s) of Absinthe:</label>
-                    <input type="text" name="measure" id="measure" value="1"  />
+                <hr />
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><label for="measure">Ounce(s) of Absinthe:</label></div>
+                    <div class="ui-block-b"><input type="text" name="measure" id="measure" value="1"  /></div>
                 </div>
-                <div data-role="fieldcontain">
-                    <label for="begin">Absinthe % ABV</label>
-                    <input type="text" name="begin" id="begin" value="68"  />
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><label for="begin">Absinthe % ABV</label></div>
+                    <div class="ui-block-b"><input type="text" name="begin" id="begin" value="68"  /></div>
                 </div>
-                <div data-role="fieldcontain">
-                    <label for="finish">Prepared % ABV</label>
-                    <input type="text" name="finish" id="finish" value="12"  />
+                
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><label for="finish">Tempered % ABV</label></div>
+                    <div class="ui-block-b"><input type="text" name="finish" id="finish" value="12"  /></div>
                 </div>
+                
                 <input type="button" value="Calculate" onClick="calculate();" />
                 
-                <h2 id="calculation"></h2>
+                <h2 id="calculation">&nbsp;</h2>
 			</div>
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
@@ -133,14 +211,16 @@
 				<h1>Absinthe Brands</h1>
 			</div>
 			<div data-role="content">
-                <ul data-role="listview" data-inset="true" data-filter="true">
+            	<p>Eventually, this will be a small database of absinthe brands with accompanying information regarding untempered ABV percentages we can select for automatic calculation. Perhaps the application will even allow custom entries...</p>
+                <p>Look for this feature in an upcoming release!</p>
+                <!--<ul data-role="listview" data-inset="true" data-filter="true">
                     <li><a href="#" data-abv="66">Leopold Brothers Absinthe Verte</a></li>
                     <li><a href="#" data-abv="68">Delaware Phoenix "Walton Waters" Absinthe Superieure</a></li>
                     <li><a href="#" data-abv="62">Pacifique Absinthe Verte Superieure</a></li>
                     <li><a href="#" data-abv="60">Vieux Carré Absinthe</a></li>
                     <li><a href="#" data-abv="63">Trinity Absinthe Superieure</a></li>
                     <li><a href="#" data-abv="62">Lucid Absinthe Superieure</a></li>
-                </ul>
+                </ul>-->
 			</div>
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
@@ -160,8 +240,10 @@
 				<h1>About this App</h1>
 			</div>
 			<div data-role="content">
-            	<h2>About</h2>
-				<p>well look</p>
+            	<p>We encourage all to visit <a href="http://wormwoodsociety.org/">The Wormwood Society</a>; a non-profit educational organization dedicated to providing accurate information about absinthe.</p>
+           	  	<img src="images/WS_Logo_200px.png" width="40%" style="padding-left:30%;padding-right:30%;" />
+                <p>This application is a gift to mobile-inclined Absintheurs everywhere from <a href="http://fracturedvisionmedia.com/">Fractured Vision Media, LLC</a>.</p>
+            	<img src="images/FVM_logo_2013.png" width="40%" style="padding-left:30%;padding-right:30%;" />
 			</div>
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
