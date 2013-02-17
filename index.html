@@ -8,6 +8,24 @@
 		<link rel="stylesheet" href="jquery/themes/Absinthe.min.css" />
         <script src="cordova-2.4.0.js"></script>
 		<script src="jquery/jquery-1.8.3.min.js"></script>
+        <script>
+			$(document).bind("mobileinit", function () {
+				$.support.cors = true;
+				$.mobile.touchOverflowEnabled = true;
+				$.mobile.allowCrossDomainPages = true;
+				$.mobile.loadingMessage = "Loading...";
+				$.mobile.pageLoadErrorMessage = "Error Loading Data";
+				$.mobile.page.prototype.options.backBtnTheme = "b";
+				$.mobile.page.prototype.options.backBtnText = "Back";
+				$.mobile.defaultPageTransition = 'none';
+				$.mobile.loadingMessageTextVisible = true;
+				$.mobile.pushStateEnabled = false;
+			
+				$.extend($.mobile, {
+					defaultPageTransition: 'none'
+				});
+			});
+		</script>
 		<script src="jquery/jquery.mobile-1.2.0.min.js"></script>
         <style>
 			@font-face {
@@ -21,8 +39,22 @@
 			a {
 				color:#030 !important;
 			}
+			html {
+				background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
+				background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -ms-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: linear-gradient(#FFFFa9,#d6d88a);
+			}
 			body {
 				text-align:center;
+				background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
+				background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -ms-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
+				background-image: linear-gradient(#FFFFa9,#d6d88a);
 			}
 			img {
 				image-rendering: auto;
@@ -55,9 +87,9 @@
 		</style>
         
         <script>
-			$(document).bind("mobileinit", function(){
-				defaultPageTransition: "slide";
-			});
+			
+			
+			
 		
 			/*
 			
@@ -153,7 +185,8 @@
             
 			<div data-role="content">
 				<img src="images/CafeAnim8_Absinthe.png" width="80%" style="padding-left:18%;padding-top:30px;" />
-                <p>"Absinthe Dilution Faerie" is a small application which calculates how much water one should temper a dose of absinthe with in accordance with the ABV percentage as laid out by Michael Meyers of The Wormwood Society.</p>
+                <p>"Absinthe Dilution Faerie" is a small application which calculates how much water one should temper a dose of absinthe with in accordance with the ABV percentage as laid out by <br/>
+                Michael Meyers of The Wormwood Society.</p>
                 <p>While this application strives to provide solid information - there is always personal preference to account for.</p>
                 <p>À votre santé!</p>
 			</div>
@@ -253,7 +286,7 @@
 			<div data-role="content">
             	<p>We encourage all to visit The Wormwood Society; a non-profit educational organization dedicated to providing accurate information about absinthe.</p>
            	  	<img src="images/WS_Logo_200px.png" width="40%" style="padding-left:30%;padding-right:30%;" />
-                <p>This application is a gift to mobile-inclined Absintheurs everywhere from Fractured Vision Media, LLC.</p>
+                <p>This application is a gift to mobile-inclined Absintheurs everywhere from <br/>Fractured Vision Media, LLC.</p>
             	<img src="images/FVM_logo_2013.png" width="40%" style="padding-left:30%;padding-right:30%;" />
 			</div>
             <div data-role="footer" data-id="appFooter" data-position="fixed">
