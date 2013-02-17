@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.fracturedvisionmedia.absinthe"
-        version   = "1.0.2">
+        version   = "1.0.3">
 		
 	<preference name="phonegap-version" value="2.3.0" />
 	<preference name="orientation" value="portrait" />
@@ -11,8 +11,11 @@
     <description>"Absinthe Dilution Faerie" is a small application which calculates how much water one should temper a dose of absinthe with in accordance with the ABV percentage as laid out by Michael Meyers of The Wormwood Society.</description>
     <author href="http://fracturedvisionmedia.com" email="info@fracturedvisionmedia.com">Fractured Vision Media, LLC</author>
 	
+	<gap:splash src="splash.png" />
+	
 	<icon src="icons/android/36.png" gap:platform="android" gap:density="ldpi" />
 	<icon src="icons/android/48.png" gap:platform="android" gap:density="mdpi" />
 	<icon src="icons/android/72.png" gap:platform="android" gap:density="hdpi" />
 	
+	<preference name="permissions" value="none" />
 </widget>
