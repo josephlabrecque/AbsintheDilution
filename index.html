@@ -8,11 +8,6 @@
 		<link rel="stylesheet" href="jquery/themes/Absinthe.min.css" />
         <script src="cordova-2.4.0.js"></script>
 		<script src="jquery/jquery-1.8.3.min.js"></script>
-        <script>
-		$(document).bind("mobileinit", function(){
-			defaultPageTransition: "fade";
-		});
-		</script>
 		<script src="jquery/jquery.mobile-1.2.0.min.js"></script>
         <style>
 			@font-face {
@@ -60,6 +55,12 @@
 		</style>
         
         <script>
+			$(document).bind("mobileinit", function(){
+				defaultPageTransition: "slide";
+			});
+		
+			/*
+			
 			document.addEventListener("deviceready", onDeviceReady, false);
 			
 			var db;
@@ -78,7 +79,7 @@
 				//db = getDatabase();
 				//db.transaction(populateDB, errorCB, successCB);
 			}
-			/*
+			
 			function getDatabase() {
 				return window.openDatabase("AbsintheDB", "1.0", "Absinthe Database", 200000);
 			}
@@ -152,7 +153,7 @@
             
 			<div data-role="content">
 				<img src="images/CafeAnim8_Absinthe.png" width="80%" style="padding-left:18%;padding-top:30px;" />
-                <p>"Absinthe Dilution Faerie" is a small application which calculates how much water one should temper a dose of absinthe with in accordance with the ABV percentage as <a href="#" rel="http://wormwoodsociety.org/index.php/general-information-education-214/601-absinthe-dilution-matrix" class="link">laid out</a> by Michael Meyers of The Wormwood Society.</p>
+                <p>"Absinthe Dilution Faerie" is a small application which calculates how much water one should temper a dose of absinthe with in accordance with the ABV percentage as laid out by Michael Meyers of The Wormwood Society.</p>
                 <p>While this application strives to provide solid information - there is always personal preference to account for.</p>
                 <p>À votre santé!</p>
 			</div>
@@ -250,9 +251,9 @@
 				<h1>About this App</h1>
 			</div>
 			<div data-role="content">
-            	<p>We encourage all to visit <a href="#" rel="http://wormwoodsociety.org/" class="link">The Wormwood Society</a>; a non-profit educational organization dedicated to providing accurate information about absinthe.</p>
+            	<p>We encourage all to visit The Wormwood Society; a non-profit educational organization dedicated to providing accurate information about absinthe.</p>
            	  	<img src="images/WS_Logo_200px.png" width="40%" style="padding-left:30%;padding-right:30%;" />
-                <p>This application is a gift to mobile-inclined Absintheurs everywhere from <a href="#" rel="http://fracturedvisionmedia.com/" class="link">Fractured Vision Media, LLC</a>.</p>
+                <p>This application is a gift to mobile-inclined Absintheurs everywhere from Fractured Vision Media, LLC.</p>
             	<img src="images/FVM_logo_2013.png" width="40%" style="padding-left:30%;padding-right:30%;" />
 			</div>
             <div data-role="footer" data-id="appFooter" data-position="fixed">
