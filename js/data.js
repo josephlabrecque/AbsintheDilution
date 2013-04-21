@@ -8,12 +8,8 @@ function checkDB(){
 		 ],
 		 function(transaction, results, rowsArray){
 			 if(rowsArray.length > 1){
-				 //just read the DB
-				 console.log("data!");
 				 readDB();
 			 }else{
-				 //DB is fresh - let's populate it with some defaults
-				 console.log("no data :(");
 				 populateDB();
 			 }
 		 }, catchError);
@@ -26,7 +22,6 @@ function populateDB(){
 			"INSERT INTO brands (name, abv, notes) VALUES ('Trinity', 63, '');"
 		 ],
 		 function(){
-			 console.log("Populated!");
 			 readDB();
 		 }, catchError);
 }
@@ -37,13 +32,18 @@ function readDB(){
 			"SELECT * FROM brands;",
 		 ],
 		 function(transaction, results, rowsArray){
-			 console.log("Success");
+			 $('#AbsintheBrands').empty();
+             clearCalculation();
+			 var html ='';
 			 for(var i=0; i<rowsArray.length; i++){
 				var id = rowsArray[i].id;
 				var name = rowsArray[i].name;
 				var abv = rowsArray[i].abv;
-				console.log("Retrieved: "+id+" - "+name+" "+abv);
+                 var notes = rowsArray[i].notes;
+				html += '<li><a href="#dilute" data-id="' + id + '" onclick="absintheClicked(this);" data-name="' + name + '" data-abv="' + abv + '" data-notes="' + notes + '">' + name + '</a><a href="#ConfigAbsinthe" data-rel="popup" data-position-to="window" data-transition="pop" data-id="' + id + '" onclick="absintheClicked(this);" data-name="' + name + '" data-abv="' + abv + '" data-notes="' + notes + '"></a></li>';
 			 }
+			 $('#AbsintheBrands').append($(html));
+             $('#AbsintheBrands').listview('refresh');
 		 }, catchError);
 }
 			 
@@ -59,51 +59,45 @@ function dropTables(){
 
 
 
-
-
-
-
-
-
 function addAbsinthe(){
-	 html5sql.process(
-		 [
-			"INSERT INTO brands (name, abv, notes) VALUES ('Trinity', 63, '');"
-		 ],
-		 function(){
-			 console.log("Added!");
-		 }, catchError);
+    if($("#absinthe-name-add").attr("value").length >= 4 && $("#absinthe-abv-add").attr("value").length >= 2){
+         html5sql.process(
+             [
+                "INSERT INTO brands (name, abv, notes) VALUES ('" + escapeFilter( $("#absinthe-name-add").attr("value") ) + "', '" + escapeFilter( $("#absinthe-abv-add").attr("value") ) + "', '" + escapeFilter( $("#absinthe-notes-add").val() ) + "');"
+             ],
+             function(){
+                 $("#AddAbsinthe").popup("close");
+                 readDB();
+             }, catchError);
+    }
 }
 			 
 function updateAbsinthe(){
-	 html5sql.process(
-		 [
-			"UPDATE brands SET name='', abv='', notes='' WHERE id=1;",
-		 ],
-		 function(){
-			 console.log("Updated!");
-		 }, catchError);
+    if($("#absinthe-name-update").val().length >= 4 && $("#absinthe-abv-update").val().length >= 2){
+         html5sql.process(
+             [
+                "UPDATE brands SET name='" + escapeFilter( $("#absinthe-name-update").val() ) + "', abv='" + escapeFilter( $("#absinthe-abv-update").val() ) + "', notes='" + escapeFilter( $("#absinthe-notes-update").val() ) + "' WHERE id='" + selectedAbsinthe.id + "';"
+             ],
+             function(){
+                 $("#UpdateAbsinthe").popup("close");
+                 readDB();
+             }, catchError);
+    }
 }
 
 function removeAbsinthe(){
 	 html5sql.process(
 		 [
-			"DELETE FROM brands WHERE id=1;",
+			"DELETE FROM brands WHERE id='" + selectedAbsinthe.id + "';",
 		 ],
 		 function(){
-			 console.log("Removed!");
+             readDB();
 		 }, catchError);
 }
 			 
-			 
-			 
-			 
-			 
-			 
+
 			 
 			 
 function catchError(error, statement){
 	console.error("Error: " + error.message + " when processing " + statement);
 }
-
-checkDB();

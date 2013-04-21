@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Patrick Hand";
+    src: url(fonts/PatrickHand-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Jacques Francois Shadow";
+    src: url(fonts/JacquesFrancoisShadow-Regular.ttf) format("truetype");
+}
+a {
+    color:#030 !important;
+}
+html {
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
+    background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -ms-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: linear-gradient(#FFFFa9,#d6d88a);
+}
+body {
+    text-align: center;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
+    background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -ms-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: linear-gradient(#FFFFa9,#d6d88a);
+}
+img {
+    image-rendering: auto;
+}
+.ui-mobile .ui-page .ui-content {
+    background : none;
+    /*font-family: "Patrick Hand";*/
+    font-size: 0.9em;
+    border:none;
+}
+.ui-mobile .ui-page {
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
+    background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -ms-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
+    background-image: linear-gradient(#FFFFa9,#d6d88a);
+}
+.ui-title {
+    font-family: "Jacques Francois Shadow";
+    font-size:1.4em !important;
+    margin:5% !important;
+}
+label {
+    text-align:left;
+    position:relative;
+    top:1em;
+}
+.spacer {
+    height:20px;
+}
+.containing-element .ui-slider-switch { width: 9em }
