@@ -26,8 +26,8 @@ function onDeviceReady() {
 }
     
 $(document).bind("mobileinit", function () {
-    $.mobile.pageContainer = $('#container');
-    $.mobile.defaultPageTransition = "pop";
+    //$.mobile.pageContainer = $('#container');
+    $.mobile.defaultPageTransition = "fade";
     
     $.support.cors = true;
     $.mobile.touchOverflowEnabled = true;
@@ -40,7 +40,7 @@ $(document).bind("mobileinit", function () {
     $.mobile.pushStateEnabled = false;
 
     $.extend($.mobile, {
-        defaultPageTransition: "pop"
+        defaultPageTransition: "fade"
     });
 });
 

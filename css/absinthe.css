@@ -16,6 +16,7 @@ html {
 }
 body {
     text-align: center;
+    background-color: #eff09d !important;
     background-image: -webkit-gradient(linear,left top,left bottom,from(#FFFFa9),to(#d6d88a));
     background-image: -webkit-linear-gradient(#FFFFa9,#d6d88a);
     background-image: -moz-linear-gradient(#FFFFa9,#d6d88a);
