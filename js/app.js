@@ -26,6 +26,9 @@ function onDeviceReady() {
 }
     
 $(document).bind("mobileinit", function () {
+    $.mobile.pageContainer = $('#container');
+    $.mobile.defaultPageTransition = "none";
+    
     $.support.cors = true;
     $.mobile.touchOverflowEnabled = true;
     $.mobile.allowCrossDomainPages = true;
@@ -33,12 +36,11 @@ $(document).bind("mobileinit", function () {
     $.mobile.pageLoadErrorMessage = "Error Loading Data";
     $.mobile.page.prototype.options.backBtnTheme = "a";
     $.mobile.page.prototype.options.backBtnText = "Back";
-    $.mobile.defaultPageTransition = 'none';
     $.mobile.loadingMessageTextVisible = true;
     $.mobile.pushStateEnabled = false;
 
     $.extend($.mobile, {
-        defaultPageTransition: 'none'
+        defaultPageTransition: "none"
     });
 });
 
