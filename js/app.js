@@ -2,7 +2,7 @@ var selectedAbsinthe = new Object();
 
 
 function calculate() {
-    var temper = $("#absinthe-dilute-measure").attr("value") * (($("#absinthe-dilute-begin").attr("value") / $("#absinthe-dilute-final").attr("value"))-1);
+    var temper = $("#absinthe-dilute-measure").val() * (($("#absinthe-dilute-begin").val() / $("#absinthe-dilute-final").val())-1);
     $("#absinthe-dilute-calculation").html("Temper this absinthe with " + temper.toPrecision(3) + " ounces of water.");
 }
 
@@ -31,7 +31,7 @@ $(document).bind("mobileinit", function () {
     $.mobile.allowCrossDomainPages = true;
     $.mobile.loadingMessage = "Loading...";
     $.mobile.pageLoadErrorMessage = "Error Loading Data";
-    $.mobile.page.prototype.options.backBtnTheme = "b";
+    $.mobile.page.prototype.options.backBtnTheme = "a";
     $.mobile.page.prototype.options.backBtnText = "Back";
     $.mobile.defaultPageTransition = 'none';
     $.mobile.loadingMessageTextVisible = true;
@@ -47,8 +47,6 @@ function absintheClicked(t){
     selectedAbsinthe.name = $(t).attr("data-name");
     selectedAbsinthe.abv = $(t).attr("data-abv");
     selectedAbsinthe.notes = $(t).attr("data-notes");
-    
-    console.log(selectedAbsinthe);
     
     $("#absinthe-id-update").attr("value", $(t).attr("data-id"));
     $("#absinthe-name-update").attr("value", $(t).attr("data-name"));

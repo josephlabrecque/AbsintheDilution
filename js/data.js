@@ -29,7 +29,7 @@ function populateDB(){
 function readDB(){
 	 html5sql.process(
 		 [
-			"SELECT * FROM brands;",
+			"SELECT * FROM brands ORDER BY LOWER(name);",
 		 ],
 		 function(transaction, results, rowsArray){
 			 $('#AbsintheBrands').empty();
@@ -60,14 +60,17 @@ function dropTables(){
 
 
 function addAbsinthe(){
-    if($("#absinthe-name-add").attr("value").length >= 4 && $("#absinthe-abv-add").attr("value").length >= 2){
+    if($("#absinthe-name-add").val().length >= 4 && $("#absinthe-abv-add").val().length >= 2){
          html5sql.process(
              [
-                "INSERT INTO brands (name, abv, notes) VALUES ('" + escapeFilter( $("#absinthe-name-add").attr("value") ) + "', '" + escapeFilter( $("#absinthe-abv-add").attr("value") ) + "', '" + escapeFilter( $("#absinthe-notes-add").val() ) + "');"
+                "INSERT INTO brands (name, abv, notes) VALUES ('" + escapeFilter( $("#absinthe-name-add").val() ) + "', '" + escapeFilter( $("#absinthe-abv-add").val() ) + "', '" + escapeFilter( $("#absinthe-notes-add").val() ) + "');"
              ],
              function(){
-                 $("#AddAbsinthe").popup("close");
-                 readDB();
+                $("#AddAbsinthe").popup("close");
+                $("#absinthe-name-add").val("");
+                $("#absinthe-abv-add").val("");
+                $("#absinthe-notes-add").val("");
+                readDB();
              }, catchError);
     }
 }
@@ -91,6 +94,7 @@ function removeAbsinthe(){
 			"DELETE FROM brands WHERE id='" + selectedAbsinthe.id + "';",
 		 ],
 		 function(){
+             $("#RemoveAbsinthe").popup("close");
              readDB();
 		 }, catchError);
 }

@@ -6,6 +6,7 @@
     font-family: "Jacques Francois Shadow";
     src: url(fonts/JacquesFrancoisShadow-Regular.ttf) format("truetype");
 }
+
 a {
     color:#030 !important;
 }
@@ -55,5 +56,8 @@ label {
 }
 .spacer {
     height:20px;
+}
+a {
+    border-radius: 4px;
 }
 .containing-element .ui-slider-switch { width: 9em }
