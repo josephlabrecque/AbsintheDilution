@@ -2,7 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<title>Absinthe Dilution Faerie</title>
         
 		<link rel="stylesheet" href="js/jquery/jquery.mobile-1.3.1.min.css" />
@@ -19,19 +21,9 @@
         <script src="js/html5sql.js"></script>
         <script src="js/data.js"></script>
         <script src="js/app.js"></script>
-        
-        
-		
-        
 	</head>
     
 	<body onload="onBodyLoad()">
-        
-        <!--
-        Center add popover
-        fix initil refresh error
-        general graphics
-        -->
     
     
 		<div data-role="page" id="start">
@@ -49,9 +41,9 @@
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
                     <ul>
-                        <li><a href="#dilute">Dilute</a></li>
-                        <li><a href="#brands">Brands</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#dilute" class="dead-leaf">Dilute</a></li>
+                        <li><a href="#brands" class="dead-leaf">Brands</a></li>
+                        <li><a href="#about" class="dead-leaf">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,7 +79,7 @@
                     <div class="ui-block-b"><input type="text" id="absinthe-dilute-final" value="12" /></div>
                 </div>
                 
-                <input type="button" value="Calculate" onClick="calculate();" />
+                <input type="button" class="dead-leaf" value="Calculate" onClick="calculate();" />
                 
                 <h2 id="absinthe-dilute-calculation">&nbsp;</h2>
 			</div>
@@ -95,9 +87,9 @@
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
                     <ul>
-                        <li><a href="#start">Home</a></li>
-                        <li><a href="#brands">Brands</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#start" class="dead-leaf">Home</a></li>
+                        <li><a href="#brands" class="dead-leaf">Brands</a></li>
+                        <li><a href="#about" class="dead-leaf">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -113,12 +105,13 @@
 		<div data-role="page" id="brands">
 			<div data-role="header" data-id="appHeader" data-position="inline">
 				<h1>Absinthe Brands</h1>
-                <a data-role="button" href="#AddAbsinthe" style="border-radius:2px;margin-top:10px;margin-right:4px;" data-rel="popup" data-icon="add" data-position-to="window" data-transition="pop" class="ui-btn-right">Add</a>
-			</div>
-            
+            </div>
+           
+            <a data-role="button" width="100%" class="dead-leaf" href="#AddAbsinthe" style="border-radius:2px;margin-top:0;margin-botton:-4px;" data-rel="popup" data-icon="add" data-position-to="window" data-transition="pop">Add an Absinthe</a>
+                
 			<div data-role="content">
                 <ul id="AbsintheBrands" class="ui-icon-alt" height="100%" data-split-icon="edit" data-theme="Absinthe" data-role="listview" data-autodividers="true" data-filter="true" data-inset="false"></ul>
-			</div>
+            </div>
             
             <div data-role="popup" id="ConfigAbsinthe" data-theme="a" data-overlay-theme="a">
                 <form>
@@ -159,7 +152,7 @@
                     <div style="padding:10px 20px;">
                         <h3>Are you absolutely sure you'd like to remove this absinthe from the database?</h3>
                         <a data-role="button" href="#" onclick="removeAbsinthe();" data-icon="delete">Delete</a>
-                        <a data-role="button" href="#" data-rel="back" data-icon="back">Cancel</a>
+                        <a data-role="button" href="#" onclick="closeDeletionPopup();" data-icon="back">Cancel</a>
                     </div>
                 </form>
             </div>
@@ -170,9 +163,9 @@
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
                     <ul>
-                        <li><a href="#start">Home</a></li>
-                        <li><a href="#dilute">Dilute</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#start" class="dead-leaf">Home</a></li>
+                        <li><a href="#dilute" class="dead-leaf">Dilute</a></li>
+                        <li><a href="#about" class="dead-leaf">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -192,17 +185,13 @@
             <div data-role="footer" data-id="appFooter" data-position="fixed">
             	<div data-role="navbar">
                     <ul>
-                        <li><a href="#start">Home</a></li>
-                        <li><a href="#dilute">Dilute</a></li>
-                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#start" class="dead-leaf">Home</a></li>
+                        <li><a href="#dilute" class="dead-leaf">Dilute</a></li>
+                        <li><a href="#brands" class="dead-leaf">Brands</a></li>
                     </ul>
                 </div>
             </div>
 		</div>
-        
-        
-        
-        
         
         
         

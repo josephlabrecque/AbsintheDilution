@@ -1,10 +1,6 @@
 @font-face {
-    font-family: "Patrick Hand";
-    src: url(fonts/PatrickHand-Regular.ttf) format("truetype");
-}
-@font-face {
-    font-family: "Jacques Francois Shadow";
-    src: url(fonts/JacquesFrancoisShadow-Regular.ttf) format("truetype");
+    font-family: "Averia Serif Libre";
+    src: url("fonts/AveriaSerifLibre-Bold.ttf") format("truetype");
 }
 
 a {
@@ -27,12 +23,14 @@ body {
     background-image: -o-linear-gradient(#FFFFa9,#d6d88a);
     background-image: linear-gradient(#FFFFa9,#d6d88a);
 }
+h1, h2, h3 {
+    font-family: "Averia Serif Libre";
+}
 img {
     image-rendering: auto;
 }
 .ui-mobile .ui-page .ui-content {
     background : none;
-    /*font-family: "Patrick Hand";*/
     font-size: 0.9em;
     border:none;
 }
@@ -45,8 +43,8 @@ img {
     background-image: linear-gradient(#FFFFa9,#d6d88a);
 }
 .ui-title {
-    font-family: "Jacques Francois Shadow";
-    font-size:1.4em !important;
+    font-family: "Averia Serif Libre";
+    font-size:1.6em !important;
     margin:5% !important;
 }
 label {
@@ -60,4 +58,10 @@ label {
 a {
     border-radius: 4px;
 }
+
+.dead-leaf {
+    background-image: linear-gradient( #f9e7cd, #e6ce8e);
+}​
+
 .containing-element .ui-slider-switch { width: 9em }
+.ui-page { -webkit-backface-visibility: hidden; }

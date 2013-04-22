@@ -56,3 +56,7 @@ function absintheClicked(t){
     $("#absinthe-dilute-name").html($(t).attr("data-name"));
     $("#absinthe-dilute-begin").attr("value", $(t).attr("data-abv"));
 }
+
+function closeDeletionPopup() {
+    $("#RemoveAbsinthe").popup("close");
+}
