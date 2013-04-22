@@ -65,10 +65,16 @@ label {
 }
 a {
     border-radius: 4px;
+    text-decoration:none;
 }
 
 .dead-leaf {
-    background-image: linear-gradient( #f9e7cd, #e6ce8e);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f9e7cd),to(#e6ce8e));
+    background-image: -webkit-linear-gradient(#f9e7cd,#e6ce8e);
+    background-image: -moz-linear-gradient(#f9e7cd,#e6ce8e);
+    background-image: -ms-linear-gradient(#f9e7cd,#e6ce8e);
+    background-image: -o-linear-gradient(#f9e7cd,#e6ce8e);
+    background-image: linear-gradient(#f9e7cd,#e6ce8e);
 }​
 
 .containing-element .ui-slider-switch { width: 9em }

@@ -18,8 +18,21 @@ function checkDB(){
 function populateDB(){
 	html5sql.process(
 		 [
-			"INSERT INTO brands (name, abv, notes) VALUES ('Leopold Bros. Absinthe Verte', 68, '');",
-			"INSERT INTO brands (name, abv, notes) VALUES ('Trinity', 63, '');"
+			"INSERT INTO brands (name, abv, notes) VALUES ('Marteau Absinthe de la Belle Epoque', 68, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Ridge Distillery Extrait D&#39;Absinthe Verte', 68, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Ridge Distillery Extrait D&#39;Absinthe Blanche', 58, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Leopold Brothers Absinthe Verte', 66, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Obsello II Absinthe Verte', 55, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Vieux Carre Absinthe Superieure', 60, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('La Clandestine Absinthe Superieure', 53, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Duplais Swiss Absinthe Verte', 68, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Vieux Pontarlier Absinthe Francais Superieure', 65, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Lucid Absinthe Superieure', 62, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Pacifique Absinthe Verte Superieur', 62, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Meadow of Love Absinthe', 68, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('St. George Absinthe Verte', 60, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Walton Waters Absinthe', 68, '');",
+			"INSERT INTO brands (name, abv, notes) VALUES ('Nouvelle Orleans Absinthe', 68, '');"
 		 ],
 		 function(){
 			 readDB();
