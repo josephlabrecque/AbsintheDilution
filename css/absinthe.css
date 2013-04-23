@@ -78,5 +78,9 @@ a {
     background-image: linear-gradient(#f9e7cd,#e6ce8e);
 }​
 
+.ui-dialog-contain {
+    background-color:#333 !important;
+}
+
 .containing-element .ui-slider-switch { width: 9em }
 .ui-page { -webkit-backface-visibility: hidden; }
