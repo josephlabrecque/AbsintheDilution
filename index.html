@@ -173,9 +173,9 @@
         
         
         
-            <div data-role="page" id="AddAbsinthe" data-theme="a">
+            <div data-role="page" id="AddAbsinthe">
+                <div data-role="header" data-id="appHeader" data-position="fixed"></div>
                 <div data-role="content">
-                <form>
                     <div style="padding:10px 20px;">
                         <h3>Absinthe Brand Details</h3>
                         <input type="text" id="absinthe-name-add" value="" placeholder="Absinthe Name" data-theme="a">
@@ -184,13 +184,13 @@
                         <a data-role="button" href="#" onclick="addAbsinthe();" data-icon="check">Add Absinthe</a>
                         <a data-role="button" href="#brands" data-rel="back" data-icon="back">Cancel</a>
                     </div>
-                </form>
-                    </div>
+                </div>
+                <div data-role="footer" data-id="appFooter" data-position="fixed"></div>
             </div>
             
-            <div data-role="page" id="UpdateAbsinthe" data-theme="a">
+            <div data-role="page" id="UpdateAbsinthe">
+                <div data-role="header" data-id="appHeader" data-position="fixed"></div>
                 <div data-role="content">
-                <form>
                     <div style="padding:10px 20px;">
                         <h3>Absinthe Brand Details</h3>
                         <input type="hidden" id="absinthe-id-update" value="">
@@ -200,8 +200,8 @@
                         <a data-role="button" href="#" onclick="updateAbsinthe();" data-icon="check">Update Absinthe</a>
                         <a data-role="button" href="#brands" data-rel="back" data-icon="back">Cancel</a>
                     </div>
-                </form>
-                    </div>
+                </div>
+                <div data-role="footer" data-id="appFooter" data-position="fixed"></div>
             </div>
         
         
