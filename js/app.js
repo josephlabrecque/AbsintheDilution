@@ -27,7 +27,7 @@ function onDeviceReady() {
     
 $(document).bind("mobileinit", function () {
     //$.mobile.pageContainer = $('#container');
-    $.mobile.defaultPageTransition = "fade";
+    $.mobile.defaultPageTransition = "none";
     
     $.support.cors = true;
     $.mobile.touchOverflowEnabled = true;
@@ -40,7 +40,7 @@ $(document).bind("mobileinit", function () {
     $.mobile.pushStateEnabled = false;
 
     $.extend($.mobile, {
-        defaultPageTransition: "fade"
+        defaultPageTransition: "none"
     });
 });
 
