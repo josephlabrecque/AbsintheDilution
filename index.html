@@ -107,7 +107,7 @@
 				<h1>Absinthe Brands</h1>
             </div>
            
-            <a data-role="button" width="100%" class="dead-leaf" href="#AddAbsinthe" style="border-radius:2px;margin-top:0;margin-botton:-4px;" data-icon="add">Add an Absinthe</a>
+            <a data-role="button" width="100%" class="dead-leaf" href="#AddAbsinthe" style="border-radius:2px;margin-top:0;margin-botton:-4px;" data-rel="dialog" data-icon="add" data-transition="slidedown">Add an Absinthe</a>
                 
 			<div data-role="content">
                 <ul id="AbsintheBrands" class="ui-icon-alt" height="100%" data-split-icon="edit" data-theme="Absinthe" data-role="listview" data-autodividers="true" data-filter="true" data-inset="false"></ul>
@@ -116,7 +116,7 @@
             <div data-role="popup" id="ConfigAbsinthe" data-theme="a" data-overlay-theme="a">
                 <form>
                     <div style="padding:10px 20px;">
-                        <a data-role="button" href="#UpdateAbsinthe" data-icon="edit">Update Absinthe</a>
+                        <a data-role="button" href="#UpdateAbsinthe" data-icon="edit" data-rel="dialog" data-transition="slidedown">Update Absinthe</a>
                         <a data-role="button" href="#RemoveAbsinthe" data-icon="delete" data-rel="popup" data-position-to="window" data-transition="pop">Delete Absinthe</a>
                     </div>
                 </form>
@@ -174,6 +174,7 @@
         
         
             <div data-role="page" id="AddAbsinthe" data-theme="a">
+                <div data-role="content">
                 <form>
                     <div style="padding:10px 20px;">
                         <h3>Absinthe Brand Details</h3>
@@ -184,9 +185,11 @@
                         <a data-role="button" href="#brands" data-rel="back" data-icon="back">Cancel</a>
                     </div>
                 </form>
+                    </div>
             </div>
             
             <div data-role="page" id="UpdateAbsinthe" data-theme="a">
+                <div data-role="content">
                 <form>
                     <div style="padding:10px 20px;">
                         <h3>Absinthe Brand Details</h3>
@@ -198,6 +201,7 @@
                         <a data-role="button" href="#brands" data-rel="back" data-icon="back">Cancel</a>
                     </div>
                 </form>
+                    </div>
             </div>
         
         
