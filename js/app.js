@@ -62,3 +62,6 @@ function absintheClicked(t){
 function closeDeletionPopup() {
     $("#RemoveAbsinthe").popup("close");
 }
+
+
+
