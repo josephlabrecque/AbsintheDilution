@@ -79,10 +79,11 @@ function addAbsinthe(){
                 "INSERT INTO brands (name, abv, notes) VALUES ('" + escapeFilter( $("#absinthe-name-add").val() ) + "', '" + escapeFilter( $("#absinthe-abv-add").val() ) + "', '" + escapeFilter( $("#absinthe-notes-add").val() ) + "');"
              ],
              function(){
-                //$("#AddAbsinthe").popup("close");
+                $("#AddAbsinthe").dialog("close");
                 $("#absinthe-name-add").val("");
                 $("#absinthe-abv-add").val("");
                 $("#absinthe-notes-add").val("");
+                 
                 readDB();
              }, catchError);
     }
@@ -95,7 +96,8 @@ function updateAbsinthe(){
                 "UPDATE brands SET name='" + escapeFilter( $("#absinthe-name-update").val() ) + "', abv='" + escapeFilter( $("#absinthe-abv-update").val() ) + "', notes='" + escapeFilter( $("#absinthe-notes-update").val() ) + "' WHERE id='" + selectedAbsinthe.id + "';"
              ],
              function(){
-                 //$("#UpdateAbsinthe").popup("close");
+                 $("#UpdateAbsinthe").dialog("close");
+                 
                  readDB();
              }, catchError);
     }
